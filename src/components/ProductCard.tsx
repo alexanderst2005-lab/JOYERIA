@@ -18,6 +18,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     addRecentlyViewed,
   } = useStore();
 
+  const [isHovered, setIsHovered] = useState(false);
   const [justAdded, setJustAdded] = useState(false);
 
   const favorite = isFavorite(product.id);
@@ -46,21 +47,38 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   const primaryImage = product.images[0] || 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80';
+  const secondaryImage = product.images[1] || primaryImage;
 
   return (
     <div
       onClick={handleOpenDetail}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       className="group flex flex-col bg-luxury-950 border border-luxury-900/80 hover:border-luxury-700/80 transition-all duration-300 cursor-pointer relative"
     >
       {/* Product Image Area */}
       <div className="relative aspect-square w-full overflow-hidden bg-luxury-900">
-        {/* Primary Image: Always visible, steady and clear */}
+        {/* Primary Image */}
         <img
           src={primaryImage}
           alt={product.name}
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-out ${
+            isHovered && product.images.length > 1 ? 'opacity-0' : 'opacity-100 scale-100 group-hover:scale-105'
+          }`}
           loading="lazy"
         />
+
+        {/* Secondary Image for smooth crossfade on hover */}
+        {product.images.length > 1 && (
+          <img
+            src={secondaryImage}
+            alt={`${product.name} detalle`}
+            className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out ${
+              isHovered ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
+            }`}
+            loading="lazy"
+          />
+        )}
 
         {/* Badges Overlay */}
         <div className="absolute top-3 left-3 flex flex-col space-y-1.5 z-10">

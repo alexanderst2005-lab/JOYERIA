@@ -99,16 +99,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [categories, setCategories] = useState<Category[]>(() => {
     try {
       const saved = localStorage.getItem('aureum_categories');
-      if (saved) {
-        const parsed: Category[] = JSON.parse(saved);
-        return parsed.map(c => {
-          if (c.slug === 'pulseras' && c.image.includes('photo-1611591475878')) {
-            return { ...c, image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=85' };
-          }
-          return c;
-        });
-      }
-      return INITIAL_CATEGORIES;
+      return saved ? JSON.parse(saved) : INITIAL_CATEGORIES;
     } catch {
       return INITIAL_CATEGORIES;
     }

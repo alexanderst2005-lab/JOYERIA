@@ -153,21 +153,21 @@ export const HeroSlider: React.FC = () => {
           })}
         </div>
 
-        {/* Manual Arrow Controls */}
+        {/* Manual Arrow Controls - Positioned in the upper third on mobile so they NEVER overlap headline or text */}
         <button
           onClick={prevSlide}
           aria-label="Slide anterior"
-          className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-12 sm:w-16 h-12 sm:h-16 flex items-center justify-center text-luxury-300 hover:text-gold-300 bg-luxury-950/70 hover:bg-luxury-900 border border-luxury-800 hover:border-gold-500/70 transition-all cursor-pointer backdrop-blur-md shadow-2xl"
+          className="absolute left-2.5 sm:left-8 top-[28%] sm:top-1/2 -translate-y-1/2 z-20 w-8 sm:w-14 h-8 sm:h-14 rounded-full sm:rounded-none flex items-center justify-center text-luxury-300 hover:text-gold-300 bg-luxury-950/80 hover:bg-luxury-900 border border-luxury-800 hover:border-gold-500/70 transition-all cursor-pointer backdrop-blur-md shadow-2xl"
         >
-          <ChevronLeft className="w-6 sm:w-8 h-6 sm:h-8 stroke-[1.5]" />
+          <ChevronLeft className="w-4 sm:w-7 h-4 sm:h-7 stroke-[1.5]" />
         </button>
 
         <button
           onClick={nextSlide}
           aria-label="Slide siguiente"
-          className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-12 sm:w-16 h-12 sm:h-16 flex items-center justify-center text-luxury-300 hover:text-gold-300 bg-luxury-950/70 hover:bg-luxury-900 border border-luxury-800 hover:border-gold-500/70 transition-all cursor-pointer backdrop-blur-md shadow-2xl"
+          className="absolute right-2.5 sm:right-8 top-[28%] sm:top-1/2 -translate-y-1/2 z-20 w-8 sm:w-14 h-8 sm:h-14 rounded-full sm:rounded-none flex items-center justify-center text-luxury-300 hover:text-gold-300 bg-luxury-950/80 hover:bg-luxury-900 border border-luxury-800 hover:border-gold-500/70 transition-all cursor-pointer backdrop-blur-md shadow-2xl"
         >
-          <ChevronRight className="w-6 sm:w-8 h-6 sm:h-8 stroke-[1.5]" />
+          <ChevronRight className="w-4 sm:w-7 h-4 sm:h-7 stroke-[1.5]" />
         </button>
 
         {/* Slide Indicators & Timeline Bars (Bottom) */}

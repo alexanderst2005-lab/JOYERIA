@@ -108,57 +108,57 @@ export const CatalogSection: React.FC = () => {
         </div>
 
         {/* Search, Filter & Sort Control Toolbar */}
-        <div className="bg-luxury-900/70 border border-luxury-800 p-4 sm:p-6 mb-10 shadow-2xl">
-          <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-            {/* Search Input (Generous & Legible) */}
+        <div className="bg-luxury-900/70 border border-luxury-800 p-3.5 sm:p-6 mb-8 sm:mb-10 shadow-2xl">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 sm:gap-4">
+            {/* Search Input */}
             <div className="relative flex-1 max-w-xl">
-              <Search className="w-5 h-5 text-luxury-400 absolute left-4 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 sm:w-5 sm:h-5 text-luxury-400 absolute left-3.5 sm:left-4 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Buscar por nombre, material o estilo (ej. Oro 18K, Cubana, Sello)..."
+                placeholder="Buscar por joya, material o estilo..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="w-full h-13 bg-luxury-950 border border-luxury-700/80 focus:border-gold-500 pl-12 pr-12 text-sm sm:text-base text-luxury-100 placeholder-luxury-400 focus:outline-none transition-colors shadow-inner"
+                className="w-full h-11 sm:h-12 bg-luxury-950 border border-luxury-700/80 focus:border-gold-500 pl-10 sm:pl-12 pr-10 sm:pr-12 text-xs sm:text-sm text-luxury-100 placeholder-luxury-400 focus:outline-none transition-colors shadow-inner"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-luxury-400 hover:text-white p-1"
+                  className="absolute right-3.5 sm:right-4 top-1/2 -translate-y-1/2 text-luxury-400 hover:text-white p-1"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
                 </button>
               )}
             </div>
 
-            {/* Filter Drawer Trigger & Sort */}
-            <div className="flex items-center space-x-3 sm:space-x-4">
+            {/* Filter Drawer Trigger & Sort Dropdown */}
+            <div className="grid grid-cols-2 gap-2.5 sm:flex sm:items-center sm:space-x-4">
               {/* Filter Button */}
               <button
                 onClick={() => setMobileFilterOpen(true)}
-                className="h-13 flex-1 sm:flex-initial flex items-center justify-center space-x-2.5 px-6 sm:px-8 bg-luxury-950 border border-luxury-700 hover:border-gold-500 text-xs sm:text-sm uppercase tracking-[0.2em] font-medium text-luxury-100 hover:text-gold-300 transition-colors cursor-pointer shadow-md"
+                className="h-11 sm:h-12 flex items-center justify-center space-x-2 px-3 sm:px-6 bg-luxury-950 border border-luxury-700 hover:border-gold-500 text-xs sm:text-sm uppercase tracking-wider font-medium text-luxury-100 hover:text-gold-300 transition-colors cursor-pointer shadow-md"
               >
-                <SlidersHorizontal className="w-4 h-4 text-gold-500" />
+                <SlidersHorizontal className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-500" />
                 <span>Filtros</span>
                 {activeFilterCount > 0 && (
-                  <span className="w-5 h-5 bg-gold-500 text-luxury-950 rounded-full text-xs font-bold flex items-center justify-center ml-1">
+                  <span className="w-4 h-4 sm:w-5 sm:h-5 bg-gold-500 text-luxury-950 rounded-full text-[10px] sm:text-xs font-bold flex items-center justify-center ml-0.5">
                     {activeFilterCount}
                   </span>
                 )}
               </button>
 
-              {/* Sort Dropdown */}
-              <div className="relative flex-1 sm:flex-initial">
+              {/* Sort Dropdown - Sized to display full text without truncation */}
+              <div className="relative">
                 <select
                   value={sortBy}
                   onChange={e => setSortBy(e.target.value)}
-                  className="h-13 appearance-none w-full bg-luxury-950 border border-luxury-700 hover:border-gold-500 text-xs sm:text-sm uppercase tracking-[0.2em] text-luxury-100 py-2.5 pl-5 pr-11 focus:outline-none focus:border-gold-500 cursor-pointer shadow-md font-medium"
+                  className="h-11 sm:h-12 appearance-none w-full bg-luxury-950 border border-luxury-700 hover:border-gold-500 text-xs sm:text-sm uppercase tracking-wider text-luxury-100 py-2 pl-3 sm:pl-4 pr-7 sm:pr-9 focus:outline-none focus:border-gold-500 cursor-pointer shadow-md font-medium"
                 >
                   <option value="destacados">Destacados</option>
-                  <option value="recientes">Más recientes</option>
-                  <option value="precio-asc">Precio: menor a mayor</option>
-                  <option value="precio-desc">Precio: mayor a menor</option>
+                  <option value="recientes">Recientes</option>
+                  <option value="precio-asc">Precio: Menor</option>
+                  <option value="precio-desc">Precio: Mayor</option>
                 </select>
-                <ChevronDown className="w-4 h-4 text-luxury-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-luxury-400 absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
             </div>
           </div>
