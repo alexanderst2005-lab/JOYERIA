@@ -37,7 +37,7 @@ export const INITIAL_CATEGORIES: Category[] = [
     id: 'pulseras',
     name: 'Pulseras',
     slug: 'pulseras',
-    image: 'https://images.unsplash.com/photo-1611591475878-5920b7ea1ec3?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=85',
     description: 'Cuffs rígidos, eslabones sólidos y brazaletes de perfil pulido.',
   },
   {
