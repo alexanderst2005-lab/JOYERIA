@@ -112,53 +112,53 @@ export const CatalogSection: React.FC = () => {
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 sm:gap-4">
             {/* Search Input */}
             <div className="relative flex-1 max-w-xl">
-              <Search className="w-4 h-4 sm:w-5 sm:h-5 text-luxury-400 absolute left-3.5 sm:left-4 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-luxury-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 placeholder="Buscar por joya, material o estilo..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="w-full h-11 sm:h-12 bg-luxury-950 border border-luxury-700/80 focus:border-gold-500 pl-10 sm:pl-12 pr-10 sm:pr-12 text-xs sm:text-sm text-luxury-100 placeholder-luxury-400 focus:outline-none transition-colors shadow-inner"
+                className="w-full h-10 sm:h-11 bg-luxury-950 border border-luxury-700/80 focus:border-gold-500 pl-10 pr-10 text-xs sm:text-sm text-luxury-100 placeholder-luxury-400 focus:outline-none transition-colors shadow-inner"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3.5 sm:right-4 top-1/2 -translate-y-1/2 text-luxury-400 hover:text-white p-1"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-luxury-400 hover:text-white p-1"
                 >
                   <X className="w-4 h-4" />
                 </button>
               )}
             </div>
 
-            {/* Filter Drawer Trigger & Sort Dropdown */}
-            <div className="grid grid-cols-2 gap-2.5 sm:flex sm:items-center sm:space-x-4">
+            {/* Filter Drawer Trigger & Sort Dropdown - Exact identical twin button dimensions */}
+            <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center sm:space-x-3">
               {/* Filter Button */}
               <button
                 onClick={() => setMobileFilterOpen(true)}
-                className="h-11 sm:h-12 flex items-center justify-center space-x-2 px-3 sm:px-6 bg-luxury-950 border border-luxury-700 hover:border-gold-500 text-xs sm:text-sm uppercase tracking-wider font-medium text-luxury-100 hover:text-gold-300 transition-colors cursor-pointer shadow-md"
+                className="h-10 sm:h-11 w-full sm:w-40 flex items-center justify-center space-x-2 px-3 bg-luxury-950 border border-luxury-700 hover:border-gold-500 text-xs uppercase tracking-wider font-medium text-luxury-100 hover:text-gold-300 transition-colors cursor-pointer shadow-md"
               >
-                <SlidersHorizontal className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-500" />
+                <SlidersHorizontal className="w-3.5 h-3.5 text-gold-500" />
                 <span>Filtros</span>
                 {activeFilterCount > 0 && (
-                  <span className="w-4 h-4 sm:w-5 sm:h-5 bg-gold-500 text-luxury-950 rounded-full text-[10px] sm:text-xs font-bold flex items-center justify-center ml-0.5">
+                  <span className="w-4 h-4 bg-gold-500 text-luxury-950 rounded-full text-[10px] font-bold flex items-center justify-center ml-0.5">
                     {activeFilterCount}
                   </span>
                 )}
               </button>
 
-              {/* Sort Dropdown - Sized to display full text without truncation */}
-              <div className="relative">
+              {/* Sort Dropdown - Identical size, height and styling to Filter button */}
+              <div className="relative w-full sm:w-40">
                 <select
                   value={sortBy}
                   onChange={e => setSortBy(e.target.value)}
-                  className="h-11 sm:h-12 appearance-none w-full bg-luxury-950 border border-luxury-700 hover:border-gold-500 text-xs sm:text-sm uppercase tracking-wider text-luxury-100 py-2 pl-3 sm:pl-4 pr-7 sm:pr-9 focus:outline-none focus:border-gold-500 cursor-pointer shadow-md font-medium"
+                  className="h-10 sm:h-11 appearance-none w-full bg-luxury-950 border border-luxury-700 hover:border-gold-500 text-xs uppercase tracking-wider text-luxury-100 pl-3 pr-7 focus:outline-none focus:border-gold-500 cursor-pointer shadow-md font-medium text-center"
                 >
                   <option value="destacados">Destacados</option>
                   <option value="recientes">Recientes</option>
                   <option value="precio-asc">Precio: Menor</option>
                   <option value="precio-desc">Precio: Mayor</option>
                 </select>
-                <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-luxury-400 absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <ChevronDown className="w-3.5 h-3.5 text-luxury-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
             </div>
           </div>
