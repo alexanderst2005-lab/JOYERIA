@@ -135,7 +135,7 @@ export const CatalogSection: React.FC = () => {
               {/* Filter Button */}
               <button
                 onClick={() => setMobileFilterOpen(true)}
-                className="h-10 sm:h-11 w-full sm:w-40 flex items-center justify-center space-x-2 px-3 bg-luxury-950 border border-luxury-700 hover:border-gold-500 text-xs uppercase tracking-wider font-medium text-luxury-100 hover:text-gold-300 transition-colors cursor-pointer shadow-md"
+                className="h-10 sm:h-11 w-full sm:w-40 flex items-center justify-center space-x-1.5 sm:space-x-2 px-2.5 sm:px-3 bg-luxury-950 border border-luxury-700 hover:border-gold-500 text-[11px] sm:text-xs font-medium text-luxury-100 hover:text-gold-300 transition-colors cursor-pointer shadow-md"
               >
                 <SlidersHorizontal className="w-3.5 h-3.5 text-gold-500" />
                 <span>Filtros</span>
@@ -146,19 +146,19 @@ export const CatalogSection: React.FC = () => {
                 )}
               </button>
 
-              {/* Sort Dropdown - Identical size, height and styling to Filter button */}
+              {/* Sort Dropdown - Sized and styled so ALL text options fit completely without truncation */}
               <div className="relative w-full sm:w-40">
                 <select
                   value={sortBy}
                   onChange={e => setSortBy(e.target.value)}
-                  className="h-10 sm:h-11 appearance-none w-full bg-luxury-950 border border-luxury-700 hover:border-gold-500 text-xs uppercase tracking-wider text-luxury-100 pl-3 pr-7 focus:outline-none focus:border-gold-500 cursor-pointer shadow-md font-medium text-center"
+                  className="h-10 sm:h-11 appearance-none w-full bg-luxury-950 border border-luxury-700 hover:border-gold-500 text-[11px] sm:text-xs font-medium text-luxury-100 pl-2.5 pr-6 focus:outline-none focus:border-gold-500 cursor-pointer shadow-md text-center"
                 >
                   <option value="destacados">Destacados</option>
-                  <option value="recientes">Recientes</option>
-                  <option value="precio-asc">Precio: Menor</option>
-                  <option value="precio-desc">Precio: Mayor</option>
+                  <option value="recientes">Más recientes</option>
+                  <option value="precio-asc">Menor precio</option>
+                  <option value="precio-desc">Mayor precio</option>
                 </select>
-                <ChevronDown className="w-3.5 h-3.5 text-luxury-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <ChevronDown className="w-3.5 h-3.5 text-luxury-400 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
             </div>
           </div>
