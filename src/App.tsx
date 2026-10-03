@@ -2,7 +2,6 @@ import { StoreProvider, useStore } from './context/StoreContext';
 import { Navbar } from './components/Navbar';
 import { HeroSlider } from './components/HeroSlider';
 import { CategoryGrid } from './components/CategoryGrid';
-import { CollectionsSection } from './components/CollectionsSection';
 import { CatalogSection } from './components/CatalogSection';
 import { EditorialCampaignSection } from './components/EditorialCampaignSection';
 import { RecentlyViewedSection } from './components/RecentlyViewedSection';
@@ -36,9 +35,6 @@ function MainStore() {
 
             {/* 3. Visual Categories Showcase ("EXPLORA LA COLECCIÓN") */}
             <CategoryGrid />
-
-            {/* 4. Editorial Collections Lookbook */}
-            <CollectionsSection />
 
             {/* 5. Campaign Story ("EL DETALLE DEFINE EL ESTILO") */}
             <EditorialCampaignSection />
