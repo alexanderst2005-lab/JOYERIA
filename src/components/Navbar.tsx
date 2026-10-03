@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Heart, Search, Menu, X, SlidersHorizontal, ArrowRight } from 'lucide-react';
+import { ShoppingBag, Heart, Menu, X, SlidersHorizontal, ArrowRight } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 
 interface NavbarProps {
@@ -14,8 +14,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
     setIsCartOpen,
     setIsFavoritesOpen,
     setIsAdminOpen,
-    searchQuery,
-    setSearchQuery,
     setSelectedCategory,
     currentView,
     setCurrentView,
@@ -23,7 +21,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showSearchInput, setShowSearchInput] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -160,44 +157,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
             {/* 3. ACCIONES A LA DERECHA (col-span-1 en mobile, col-span-3 en desktop) */}
             <div className="lg:col-span-3 flex items-center justify-end space-x-3 sm:space-x-6">
-              {/* Search Toggle */}
-              <div className="relative">
-                {showSearchInput ? (
-                  <div className="flex items-center bg-luxury-900 border border-luxury-700 px-3.5 py-2 animate-fade-in shadow-xl">
-                    <Search className="w-4 h-4 text-luxury-400 mr-2" />
-                    <input
-                      type="text"
-                      placeholder="Buscar joya..."
-                      value={searchQuery}
-                      onChange={(e) => {
-                        setSearchQuery(e.target.value);
-                        scrollToSection('catalogo');
-                      }}
-                      className="bg-transparent border-none text-xs sm:text-sm text-luxury-100 placeholder-luxury-500 focus:outline-none w-28 sm:w-44"
-                      autoFocus
-                    />
-                    <button
-                      onClick={() => setShowSearchInput(false)}
-                      className="text-luxury-400 hover:text-white ml-1 p-1"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => {
-                      setShowSearchInput(true);
-                      scrollToSection('catalogo');
-                    }}
-                    className="text-luxury-200 hover:text-gold-400 p-2 sm:p-2.5 transition-colors cursor-pointer"
-                    aria-label="Buscar joyas"
-                    title="Buscar joyas"
-                  >
-                    <Search className="w-5 sm:w-6 h-5 sm:h-6 stroke-[1.5]" />
-                  </button>
-                )}
-              </div>
-
               {/* Wishlist / Favorites */}
               <button
                 onClick={() => setIsFavoritesOpen(true)}
@@ -248,10 +207,20 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer */}
+      </header>
+
+        {/* Mobile Navigation Drawer (outside header so fixed positioning works) */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-[75px] z-50 bg-luxury-950/98 backdrop-blur-2xl border-t border-luxury-800 p-6 flex flex-col justify-between animate-fade-in overflow-y-auto">
-            <div className="space-y-6 text-center pt-6">
+          <div className="lg:hidden fixed inset-0 z-[100] bg-luxury-950 p-6 flex flex-col justify-between animate-fade-in overflow-y-auto">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute top-5 right-5 text-luxury-100 hover:text-gold-400 p-2"
+              aria-label="Cerrar menú"
+            >
+              <X className="w-7 h-7" />
+            </button>
+            <div className="space-y-6 text-center pt-16">
               <div className="text-xs tracking-[0.3em] uppercase text-gold-500">Navegación Exclusiva</div>
               <nav className="flex flex-col space-y-6 text-lg tracking-[0.25em] uppercase font-light">
                 <button
@@ -314,7 +283,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
             </div>
           </div>
         )}
-      </header>
     </>
   );
 };
