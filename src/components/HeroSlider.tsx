@@ -69,9 +69,9 @@ export const HeroSlider: React.FC = () => {
 
   return (
     <div className="relative w-full overflow-hidden bg-luxury-950">
-      {/* FULLSCREEN HORIZONTAL SLIDING HERO (Physically translates Right to Left) */}
+      {/* FULLSCREEN HERO */}
       <section
-        className="relative w-full h-[85vh] min-h-[580px] max-h-[960px] overflow-hidden select-none"
+        className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden select-none"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onTouchStart={handleTouchStart}
@@ -105,47 +105,32 @@ export const HeroSlider: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-luxury-950 via-luxury-950/60 to-luxury-950/20" />
                 <div className="absolute inset-0 bg-gradient-to-r from-luxury-950/90 via-luxury-950/50 to-transparent" />
 
-                {/* Slide Text Content */}
-                <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 pb-20 sm:pb-28 lg:pb-32">
-                  <div className="max-w-3xl">
-                    {/* Badge */}
-                    <div className="inline-flex items-center space-x-3 text-gold-400 text-xs sm:text-sm tracking-[0.3em] uppercase mb-4 sm:mb-6 font-medium">
-                      <span className="w-10 sm:w-16 h-[1.5px] bg-gold-400" />
-                      <span>{slide.tag}</span>
-                    </div>
-
-                    {/* Main Headline */}
-                    <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-ivory-50 tracking-wide uppercase font-light leading-[1.08] mb-4 sm:mb-6 drop-shadow-lg">
-                      {slide.title}
+                {/* Slide Text Content (Centered Layout) */}
+                <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-4 pt-20">
+                  <div className="flex-1 flex flex-col items-center justify-center">
+                    <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-ivory-50 tracking-[0.2em] uppercase font-light drop-shadow-2xl mb-3 sm:mb-4">
+                      AUREUM
                     </h1>
+                    <span className="text-[10px] sm:text-xs tracking-[0.4em] uppercase text-gold-500 font-sans drop-shadow-md">
+                      COMPRAVENTA Y JOYERIA
+                    </span>
+                  </div>
 
-                    {/* Subtitle */}
-                    <p className="text-luxury-200 text-sm sm:text-lg lg:text-xl font-light tracking-wide max-w-2xl mb-8 sm:mb-10 leading-relaxed drop-shadow-md">
-                      {slide.subtitle}
-                    </p>
-
-                    {/* Action Buttons */}
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
-                      <button
-                        onClick={() => handleCtaClick(slide.categoryTarget)}
-                        className="px-8 sm:px-10 py-4 sm:py-5 bg-gold-500 hover:bg-gold-400 text-luxury-950 text-xs sm:text-sm font-bold uppercase tracking-[0.25em] transition-all duration-300 shadow-2xl flex items-center justify-center space-x-3 cursor-pointer group"
-                      >
-                        <span>DESCUBRIR COLECCIÓN</span>
-                        <span className="transition-transform duration-300 group-hover:translate-x-1.5 text-base font-bold">
-                          →
-                        </span>
-                      </button>
-
-                      <button
-                        onClick={() => {
-                          const el = document.getElementById('editorial');
-                          if (el) el.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                        className="px-8 sm:px-10 py-4 sm:py-5 border border-luxury-600 hover:border-gold-500 text-luxury-100 hover:text-gold-300 text-xs sm:text-sm font-medium uppercase tracking-[0.25em] transition-all duration-300 cursor-pointer bg-luxury-950/60 backdrop-blur-md text-center"
-                      >
-                        Ver Campaña Editorial
-                      </button>
+                  <div className="pb-16 sm:pb-20 flex flex-col items-center">
+                    <button
+                      onClick={() => handleCtaClick(slide.categoryTarget)}
+                      className="px-8 sm:px-12 py-3 sm:py-4 bg-luxury-950/40 backdrop-blur-sm border border-gold-500/50 hover:border-gold-400 hover:bg-gold-500/10 text-gold-400 text-xs sm:text-sm font-medium uppercase tracking-[0.25em] transition-all duration-300 flex items-center space-x-3 cursor-pointer group mb-10 sm:mb-12 shadow-lg"
+                    >
+                      <span>EXPLORAR COLECCIÓN</span>
+                      <span className="transition-transform duration-300 group-hover:translate-x-1.5">
+                        →
+                      </span>
+                    </button>
+                    
+                    <div className="text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-luxury-400 mb-4 opacity-80">
+                      Descubrir
                     </div>
+                    <div className="w-[1.5px] h-12 sm:h-16 bg-gradient-to-b from-gold-500 to-transparent opacity-70"></div>
                   </div>
                 </div>
               </div>

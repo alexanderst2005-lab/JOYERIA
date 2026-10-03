@@ -113,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 <span className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-[0.25em] text-ivory-50 uppercase font-light transition-all duration-300 group-hover:text-gold-300 drop-shadow-md whitespace-nowrap">
                   {cleanBrandName}
                 </span>
-                <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase text-gold-500 font-sans mt-0.5 whitespace-nowrap">
+                <span className="text-[7px] sm:text-[8px] tracking-[0.3em] uppercase text-gold-500 font-sans mt-0.5 whitespace-nowrap">
                   COMPRAVENTA Y JOYERIA
                 </span>
               </a>
