@@ -6,7 +6,6 @@ import { useStore } from '../context/StoreContext';
 export const HeroSlider: React.FC = () => {
   const { setSelectedCategory, setCurrentView } = useStore();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Mobile Touch Swipe Handling
@@ -25,8 +24,6 @@ export const HeroSlider: React.FC = () => {
 
   // Auto-advance every 4.2 seconds
   useEffect(() => {
-    if (isPaused) return;
-
     timeoutRef.current = setTimeout(() => {
       nextSlide();
     }, 4200);
@@ -34,7 +31,7 @@ export const HeroSlider: React.FC = () => {
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-  }, [currentSlide, isPaused]);
+  }, [currentSlide]);
 
   // Touch Swipe Listeners
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -72,8 +69,6 @@ export const HeroSlider: React.FC = () => {
       {/* FULLSCREEN HERO */}
       <section
         className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden select-none"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}

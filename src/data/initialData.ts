@@ -425,7 +425,7 @@ export const HERO_SLIDES = [
     tag: 'CAMPAÑA CONTEMPORÁNEA',
     title: 'JOYAS CON IDENTIDAD.',
     subtitle: 'Eslabones cubanos y cadenas facetadas diseñadas para trascender el género y definir un estilo propio y sofisticado.',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=2400&q=90',
+    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=2400',
     categoryTarget: 'Cadenas',
   },
   {
@@ -433,7 +433,7 @@ export const HERO_SLIDES = [
     tag: 'MINIMALISMO & FORMA',
     title: 'DISEÑO QUE PERDURA.',
     subtitle: 'Siluetas arquitectónicas creadas para quienes valoran la pureza de los materiales y la sobriedad en cada brazalete.',
-    image: 'https://images.unsplash.com/photo-1611591475878-5920b7ea1ec3?auto=format&fit=crop&w=2400&q=90',
+    image: 'https://images.unsplash.com/photo-1611591475878-5920b7ea1ec3?q=80&w=2400',
     categoryTarget: 'Pulseras',
   },
   {
@@ -441,7 +441,7 @@ export const HERO_SLIDES = [
     tag: 'ORFEBRERÍA DE PRECISIÓN',
     title: 'ENCUENTRA TU PIEZA.',
     subtitle: 'Colgantes geométricos y prismas en oro de 18 quilates concebidos para acompañarte toda la vida.',
-    image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=2400&q=90',
+    image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2400',
     categoryTarget: 'Collares',
   }
 ];
