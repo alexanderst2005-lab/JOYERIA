@@ -121,7 +121,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockQuantity: 12,
     images: [
       'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85',
-      'https://images.unsplash.com/photo-1611591475878-5920b7ea1ec3?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1000&q=85',
       'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1000&q=85',
     ],
     description: 'Eslabón cubano facetado a corte diamante para reflejar la luz con precisión angular. Diseñada con proporciones ideales para portarse sola o en layering con dijes minimalistas. Cuenta con broche de caja con doble traba de seguridad.',
@@ -149,7 +149,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     stockStatus: 'Disponible',
     stockQuantity: 6,
     images: [
-      'https://images.unsplash.com/photo-1611591475878-5920b7ea1ec3?auto=format&fit=crop&w=1000&q=85',
+      'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1000&q=85',
       'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=1000&q=85',
     ],
     description: 'Cuff esculpido en plata maciza 925 con textura cepillada mate en el exterior y pulido espejo interior para máximo confort anatómico. Su apertura trasera permite un ajuste ergonómico preciso sin perder solidez.',
@@ -433,7 +433,7 @@ export const HERO_SLIDES = [
     tag: 'MINIMALISMO & FORMA',
     title: 'DISEÑO QUE PERDURA.',
     subtitle: 'Siluetas arquitectónicas creadas para quienes valoran la pureza de los materiales y la sobriedad en cada brazalete.',
-    image: 'https://images.unsplash.com/photo-1611591475878-5920b7ea1ec3?q=80&w=2400',
+    image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2400',
     categoryTarget: 'Pulseras',
   },
   {
@@ -459,7 +459,7 @@ export const INSTAGRAM_POSTS = [
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1611591475878-5920b7ea1ec3?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=80',
     caption: 'Cuff Monolito en plata maciza 925 cepillada a mano. #ModernLuxury',
   },
   {
