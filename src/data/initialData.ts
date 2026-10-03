@@ -1,7 +1,7 @@
 import type { Product, Category, StoreConfig } from '../types';
 
 export const INITIAL_CONFIG: StoreConfig = {
-  brandName: 'AUREUM',
+  brandName: "TUMAC'S",
   brandTagline: 'Alta Joyería Contemporánea & Minimalista',
   whatsappNumber: '573001234567',
   whatsappDisplayNumber: '+57 300 123 4567',
@@ -417,7 +417,7 @@ export const HERO_SLIDES = [
     tag: 'COLECCIÓN PERMANENTE',
     title: 'EL DETALLE LO CAMBIA TODO.',
     subtitle: 'Sellos esculpidos y anillos macizos con proporciones exactas y metales nobles para una presencia rotunda y atemporal.',
-    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=2400&q=90',
+    image: 'https://images.unsplash.com/photo-1574366668705-eb8b4c09265f?auto=format&fit=crop&w=2400&q=90',
     categoryTarget: 'Anillos',
   },
   {

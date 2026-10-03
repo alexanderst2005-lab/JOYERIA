@@ -105,37 +105,39 @@ export const HeroSlider: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-luxury-950 via-luxury-950/60 to-luxury-950/20" />
                 <div className="absolute inset-0 bg-gradient-to-r from-luxury-950/90 via-luxury-950/50 to-transparent" />
 
-                {/* Slide Text Content (Centered Layout) */}
-                <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-4 pt-20">
-                  <div className="flex-1 flex flex-col items-center justify-center">
-                    <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-ivory-50 tracking-[0.2em] uppercase font-light drop-shadow-2xl mb-3 sm:mb-4">
-                      AUREUM
-                    </h1>
-                    <span className="text-[10px] sm:text-xs tracking-[0.4em] uppercase text-gold-500 font-sans drop-shadow-md">
-                      COMPRAVENTA Y JOYERIA
-                    </span>
-                  </div>
-
-                  <div className="pb-16 sm:pb-20 flex flex-col items-center">
-                    <button
-                      onClick={() => handleCtaClick(slide.categoryTarget)}
-                      className="px-8 sm:px-12 py-3 sm:py-4 bg-luxury-950/40 backdrop-blur-sm border border-gold-500/50 hover:border-gold-400 hover:bg-gold-500/10 text-gold-400 text-xs sm:text-sm font-medium uppercase tracking-[0.25em] transition-all duration-300 flex items-center space-x-3 cursor-pointer group mb-10 sm:mb-12 shadow-lg"
-                    >
-                      <span>EXPLORAR COLECCIÓN</span>
-                      <span className="transition-transform duration-300 group-hover:translate-x-1.5">
-                        →
-                      </span>
-                    </button>
-                    
-                    <div className="text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-luxury-400 mb-4 opacity-80">
-                      Descubrir
-                    </div>
-                    <div className="w-[1.5px] h-12 sm:h-16 bg-gradient-to-b from-gold-500 to-transparent opacity-70"></div>
-                  </div>
-                </div>
+                {/* Blank slide content, text is now floating above all slides */}
               </div>
             );
           })}
+        </div>
+
+        {/* Fixed Text Overlay (Centered Layout) */}
+        <div className="absolute inset-0 pointer-events-none z-10 w-full h-full flex flex-col items-center justify-center text-center px-4 pt-20">
+          <div className="flex-1 flex flex-col items-center justify-center">
+            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-ivory-50 tracking-[0.2em] uppercase font-light drop-shadow-2xl mb-3 sm:mb-4">
+              TUMAC'S
+            </h1>
+            <span className="text-[10px] sm:text-xs tracking-[0.4em] uppercase text-gold-500 font-sans drop-shadow-md">
+              COMPRAVENTA Y JOYERIA
+            </span>
+          </div>
+
+          <div className="pb-16 sm:pb-20 flex flex-col items-center pointer-events-auto">
+            <button
+              onClick={() => handleCtaClick('catalogo')}
+              className="px-8 sm:px-12 py-3 sm:py-4 bg-luxury-950/40 backdrop-blur-sm border border-gold-500/50 hover:border-gold-400 hover:bg-gold-500/10 text-gold-400 text-xs sm:text-sm font-medium uppercase tracking-[0.25em] transition-all duration-300 flex items-center space-x-3 cursor-pointer group mb-10 sm:mb-12 shadow-lg"
+            >
+              <span>EXPLORAR COLECCIÓN</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1.5">
+                →
+              </span>
+            </button>
+            
+            <div className="text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-luxury-400 mb-4 opacity-80">
+              Descubrir
+            </div>
+            <div className="w-[1.5px] h-12 sm:h-16 bg-gradient-to-b from-gold-500 to-transparent opacity-70"></div>
+          </div>
         </div>
 
         {/* Manual Arrow Controls - Positioned in the upper third on mobile so they NEVER overlap headline or text */}
