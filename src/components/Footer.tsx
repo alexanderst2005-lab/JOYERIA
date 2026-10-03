@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
               {config.brandName}
             </div>
             <div className="text-[10px] tracking-[0.25em] uppercase text-gold-500 mb-6">
-              Haute Joaillerie Contemporaine
+              COMPRAVENTA Y JOYERIA
             </div>
             <p className="text-luxury-400 text-xs font-light leading-relaxed max-w-sm mb-6">
               Joyería de alta gama con identidad universal y atemporal. Piezas concebidas para trascender modas efímeras con diseño sobrio y metales nobles garantizados.

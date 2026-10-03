@@ -114,7 +114,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   {cleanBrandName}
                 </span>
                 <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase text-gold-500 font-sans mt-0.5 whitespace-nowrap">
-                  Haute Joaillerie
+                  COMPRAVENTA Y JOYERIA
                 </span>
               </a>
             </div>
