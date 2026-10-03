@@ -417,7 +417,7 @@ export const HERO_SLIDES = [
     tag: 'COLECCIÓN PERMANENTE',
     title: 'EL DETALLE LO CAMBIA TODO.',
     subtitle: 'Sellos esculpidos y anillos macizos con proporciones exactas y metales nobles para una presencia rotunda y atemporal.',
-    image: 'https://images.unsplash.com/photo-1574366668705-eb8b4c09265f?auto=format&fit=crop&w=2400&q=90',
+    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2400',
     categoryTarget: 'Anillos',
   },
   {
